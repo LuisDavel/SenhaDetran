@@ -1,0 +1,37 @@
+ if (!$retorno) {
+            echo("Nao foi possivel deletar o cliente com o codigo ". $id);
+        }else{
+            if(empty($item)){
+                echo("Nao foi possivel deletar o cliente com o codigo ". $id);
+            }else if($item['id_cliente'] == $id){
+                $sql = "DELETE FROM cliente WHERE id_cliente = $id";
+                $retorno = mysqli_query($con, $sql);
+                if (!$retorno) {
+                    echo("Nao foi possivel deletar o cliente com o codigo ".$id);
+                } else {
+                    header("location: listar-clientes.php");
+                }
+            }else{
+                echo("Nao foi possivel deletar o cliente com o codigo ".$id);
+            }
+        }
+        
+        mysqli_close($con);  
+
+
+
+<script>
+    setInterval(function(){
+        $('#my').load('index.php #my');
+    }, 2000) /* time in milliseconds (ie 2 seconds)*/
+</script>
+
+
+<script>
+    setInterval(function(){
+        $('#my1').load('index.php #my1');
+    }, 5000) /* time in milliseconds (ie 2 seconds)*/
+</script>s
+
+
+<a href="" onload="window.open('http://Coloque o endereço da página aqui!','Janela','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=300,left=25,top=25'); return false;"></a>
